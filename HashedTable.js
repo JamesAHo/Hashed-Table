@@ -4,7 +4,7 @@ class HashTable {
     constructor(size = 7) {
         this.dataMap = new Array(size);
     }
-    // hash function
+    // hash function O(1)
     _hash(key) {
         let hash = 0
         for (let i = 0; i < key.length; i++) {
@@ -21,7 +21,7 @@ class HashTable {
        this.dataMap[index].push([key,value])
        return this
     }
-    // get method
+    // get method O(N)
     get(key) {
         let index = this._hash(key)
         if(this.dataMap[index]) {
@@ -33,7 +33,7 @@ class HashTable {
         }
         return undefined
     }
-    // keys method
+    // keys method O(1)
     keys() {
         let allKeys = [];
         for (let i = 0; i < this.dataMap.length; i ++) {
